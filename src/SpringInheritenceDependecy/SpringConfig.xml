@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+    <bean id="service" class="SpringInheritenceDependecy.CustomerServiceImp">
+        <constructor-arg ref="cust1"/>
+    </bean>
+    <bean id="cust1" class="SpringInheritenceDependecy.Customer">
+        <property name="custAddress" ref="address"/>
+        <property name="custName" value="Jeevesh Singhroa"/>
+        <property name="custId" value="1"/>
+    </bean>
+    <bean id="address" class="SpringInheritenceDependecy.Address">
+        <property name="hno" value="119"/>
+        <property name="street" value="ECC road"/>
+        <property name="area" value="Whitefield"/>
+        <property name="city" value="Bangalore"/>
+    </bean>
+</beans>
