@@ -17,5 +17,6 @@ public class SpringDriver {
         ApplicationContext context = new ClassPathXmlApplicationContext("/SpringInheritenceDependecy/SpringConfig.xml");
         CustomerServiceImp s = (CustomerServiceImp) context.getBean("service");
         s.displayDetails();
+        System.out.println(s.getCustomer());
     }
 }
