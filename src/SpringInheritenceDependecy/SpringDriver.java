@@ -18,5 +18,6 @@ public class SpringDriver {
         CustomerServiceImp s = (CustomerServiceImp) context.getBean("service");
         s.displayDetails();
         System.out.println(s.getCustomer());
+        s.displayDetails();
     }
 }
