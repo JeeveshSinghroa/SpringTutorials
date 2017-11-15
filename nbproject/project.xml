@@ -15,6 +15,7 @@
             <config-files>
                 <config-file>src/SpringDemos/SpringConfig.xml</config-file>
                 <config-file>src/SpringInheritenceDependecy/SpringConfig.xml</config-file>
+                <config-file>src/AopDemos/SpringConfig.xml</config-file>
             </config-files>
             <config-file-groups/>
         </spring-data>
