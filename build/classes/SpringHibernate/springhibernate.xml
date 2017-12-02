@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+">
+   
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/javahibernate" />
+        <property name="username" value="root" />
+        <property name="password" value="root" />
+    </bean>
+        
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="mappingResources">
+            <list>
+                <value>/SpringHibernate/user.hbm.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dailect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.autocommit">true</prop>
+            </props>
+        </property>
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <bean id="daoTarget" class="SpringHibernate.UserDAOImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate" />
+    </bean>
+</beans>

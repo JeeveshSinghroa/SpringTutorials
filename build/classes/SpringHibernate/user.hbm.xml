@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="SpringHibernate.User" table="USER1">
+    <id column="userId" name="userId" type="java.lang.long">
+      <generator class="increment"/>
+    </id>
+    <property column="firstName" name="firstName" type="java.lang.String"/>
+    <property column="lastName" name="lastName" type="java.lang.String"/>
+    <property column="age" name="age" type="java.lang.Integer"/>
+    <property column="email" name="email" type="java.lang.String"/>
+  </class>
+</hibernate-mapping>

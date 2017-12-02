@@ -18,6 +18,7 @@
                 <config-file>src/AopDemos/SpringConfig.xml</config-file>
                 <config-file>src/SpringDatabaseOrm/beans.xml</config-file>
                 <config-file>src/PracticeSpringOrm/springconfig.xml</config-file>
+                <config-file>src/SpringHibernate/springhibernate.xml</config-file>
             </config-files>
             <config-file-groups/>
         </spring-data>
